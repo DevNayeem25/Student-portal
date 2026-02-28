@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSE Spring 2026 - Student List</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,10...95&display=swap" rel="stylesheet">
+<style>
+body{
+    margin:0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg,#53009b,#011c5d,#2f0266);
+    color:#fff;
+}
+
+header{
+    text-align:center;
+    padding:30px 10px;
+    background: rgba(0,0,0,0.3);
+    backdrop-filter: blur(10px);
+    font-family: 'Montserrat', sans-serif;
+}
+
+header h1{
+    margin:0;
+    font-size:28px;
+    letter-spacing:1px;
+}
+
+.search-box{
+    text-align:center;
+    margin:20px;
+}
+
+.search-box input{
+    width:90%;
+    max-width:400px;
+    padding:12px;
+    border:none;
+    border-radius:30px;
+    outline:none;
+    font-size:15px;
+}
+
+.section{
+    padding:20px;
+}
+
+.section h2{
+    text-align:center;
+    margin-bottom:20px;
+    color:#ffd369;
+}
+
+.student-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:15px;
+}
+
+.card{
+    background: rgba(255,255,255,0.08);
+    padding:15px;
+    border-radius:15px;
+    backdrop-filter: blur(10px);
+    transition:0.3s;
+    border:1px solid rgba(255,255,255,0.1);
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    background: rgba(255,255,255,0.15);
+}
+
+.id{
+    font-weight:bold;
+    font-size:14px;
+    color:#00eaff;
+}
+
+.name{
+    margin-top:5px;
+    font-size:16px;
+}
+
+.cr{
+    display:inline-block;
+    margin-top:6px;
+    padding:3px 8px;
+    font-size:12px;
+    background:#ff4c4c;
+    border-radius:20px;
+}
+
+footer{
+    text-align:center;
+    padding:15px;
+    background:rgba(0,0,0,0.4);
+    font-size:14px;
+    margin-top:20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>CSE - SPRING STUDENT 2026</h1>
+    <p>Professional Student Directory</p>
+</header>
+
+<div class="search-box">
+    <input type="text" id="searchInput" placeholder="Search by ID or Name...">
+</div>
+
+<!-- Regular Students -->
+<div class="section">
+<h2>Regular Students</h2>
+<div class="student-grid" id="regularStudents">
+
+<!-- Student Cards --><div class="card">
+<div class="id">261-115-117</div>
+<div class="name">Samia Mahbub <span class="cr">CR</span></div>
+</div>
+
+<div class="card"><div class="id">261-115-118</div><div class="name">Mouli Roy</div></div>
+<div class="card"><div class="id">261-115-119</div><div class="name">Shah Nusrat Jahan</div></div>
+<div class="card"><div class="id">261-115-120</div><div class="name">Suprova Hossain Obonti</div></div>
+
+<div class="card"><div class="id">261-115-122</div><div class="name">Jannatul Mawa</div></div>
+<div class="card"><div class="id">261-115-123</div><div class="name">Namrota Sarty</div></div>
+<div class="card"><div class="id">261-115-124</div><div class="name">Khadiza Akther Tarin</div></div>
+<div class="card"><div class="id">261-115-125</div><div class="name">Tasnim Ahmed Maliha</div></div>
+<div class="card"><div class="id">261-115-126</div><div class="name">MST Samira Jannat Lavoni</div></div>
+
+<div class="card"><div class="id">261-115-128</div><div class="name">Sanjida Jannat</div></div>
+<div class="card"><div class="id">261-115-129</div><div class="name">Shanjida Fateha Lima</div></div>
+<div class="card"><div class="id">261-115-130</div><div class="name">Sajeda Nur Chowdhury</div></div>
+<div class="card"><div class="id">261-115-131</div><div class="name">Fayja Islam Chowdhury</div></div>
+<div class="card"><div class="id">261-115-132</div><div class="name">Fahi Muhtadee</div></div>
+<div class="card"><div class="id">261-115-133</div><div class="name">Nafisha Akter Trisha</div></div>
+<div class="card"><div class="id">261-115-134</div><div class="name">Nowshin Nawal Khan</div></div>
+<div class="card"><div class="id">261-115-135</div><div class="name">Tamzidur Rahman</div></div>
+<div class="card"><div class="id">261-115-136</div><div class="name">Yousuf Ahmed Sunny</div></div>
+<div class="card"><div class="id">261-115-137</div><div class="name">Sunjida Akter</div></div>
+<div class="card"><div class="id">261-115-138</div><div class="name">Tajbid Ahmed Chowdhury</div></div>
+<div class="card"><div class="id">261-115-139</div><div class="name">Sadia Akther</div></div>
+<div class="card"><div class="id">261-115-140</div><div class="name">Maisha Tasnim Chowdhury</div></div>
+<div class="card"><div class="id">261-115-141</div><div class="name">Amirul Islam</div></div>
+<div class="card"><div class="id">261-115-142</div><div class="name">Arjumand Ara Liza</div></div>
+<div class="card"><div class="id">261-115-144</div><div class="name">Zarin Mashud Sabah</div></div>
+<div class="card"><div class="id">261-115-145</div><div class="name">Sagufta Nasrin Luthfa</div></div>
+<div class="card"><div class="id">261-115-146</div><div class="name">Afrida Anjum</div></div>
+<div class="card"><div class="id">261-115-147</div><div class="name">Md Ariful Haque</div></div>
+<div class="card"><div class="id">261-115-148</div><div class="name">Puspita Sinha</div></div>
+<div class="card"><div class="id">261-115-149</div><div class="name">Farhana Noor Shumi</div></div>
+<div class="card"><div class="id">261-115-150</div><div class="name">Sanjida Tasnim Lisa</div></div>
+
+</div>
+
+<!-- Re-Admission Students -->
+<div class="section">
+<h2>Re-Admission Students</h2>
+<div class="student-grid" id="reStudents">
+
+<div class="card"><div class="id">253-115-103</div><div class="name">Porag Chowdhury</div></div>
+<div class="card"><div class="id">251-115-183</div><div class="name">Jannatull Nayeem Nur</div><div class="cr">CR</div></div>
+<div class="card"><div class="id">252-115-120</div><div class="name">Abdullah Al Mahi M Chowdhury</div></div>
+<div class="card"><div class="id">252-115-116</div><div class="name">Md Abdul Ahad Saiedy</div></div>
+<div class="card"><div class="id">231-115-324</div><div class="name">Md Al Walid Samaun</div></div>
+<div class="card"><div class="id">253-115-117</div><div class="name">Shrestrojit Barman Angkur</div></div>
+<div class="card"><div class="id">252-115-176</div><div class="name">Samiha Mahjabin Jarin</div></div>
+<div class="card"><div class="id">222-115-017</div><div class="name">Razia Sultana Shammi (Mukti)</div></div>
+
+</div>
+</div>
+
+<footer>
+© 2026 CSE Student Management | Professional Layout
+</footer>
+
+<script>
+const searchInput = document.getElementById("searchInput");
+searchInput.addEventListener("keyup", function(){
+    const filter = searchInput.value.toLowerCase();
+    const cards = document.querySelectorAll(".card");
+
+    cards.forEach(card=>{
+        const text = card.textContent.toLowerCase();
+        if(text.includes(filter)){
+            card.style.display="";
+        }else{
+            card.style.display="none";
+        }
+    });
+});
+</script>
+
+</body>
+</html>
