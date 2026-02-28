@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>CSE Student List</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background: linear-gradient(135deg, #5d5d5d, #094356, #076b96);
+        color: white;
+      }
+
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        padding: 20px;
+      }
+
+      header img {
+        width: 300px;
+      }
+
+      .container {
+        padding: 20px;
+      }
+
+      .controls {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: space-between;
+        margin-bottom: 15px;
+      }
+
+      input {
+        padding: 8px;
+        border-radius: 5px;
+        border: none;
+      }
+
+      button {
+        padding: 8px 12px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        background: #0a3d62;
+        color: white;
+      }
+
+      button:hover {
+        background: #1e6091;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        background: white;
+        color: black;
+        border-radius: 10px;
+        overflow: hidden;
+        margin-bottom: 25px;
+      }
+
+      th {
+        background: #0a3d62;
+        color: white;
+        padding: 10px;
+      }
+
+      td {
+        padding: 8px;
+        text-align: center;
+        border-bottom: 1px solid #ddd;
+      }
+
+      tr:hover {
+        background: #f2f2f2;
+      }
+
+      .section-title {
+        font-size: 20px;
+        margin: 20px 0 10px 0;
+      }
+
+      .counter {
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      .badge {
+        background: red;
+        color: white;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-size: 11px;
+      }
+
+      .dark {
+        background: #111;
+      }
+
+      .dark table {
+        background: #222;
+        color: white;
+      }
+
+      .dark th {
+        background: #000;
+      }
+
+      .dark tr:hover {
+        background: #333;
+      }
+
+      @media print {
+        .controls,
+        .counter {
+          display: none;
+        }
+        body {
+          background: white;
+          color: black;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <img
+        src="metropolitan-university.png.png"
+      />
+
+      <div class="logo">
+        <h2>CSE 65C Student List</h2>
+        <p>Sylhet Metropolitan University</p>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="controls">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search ID or Name..."
+          onkeyup="searchTable()"
+        />
+
+        <div>
+          <button onclick="downloadCSV()">Download Excel</button>
+          <button onclick="window.print()">Print</button>
+          <button onclick="toggleDark()">Dark Mode</button>
+        </div>
+      </div>
+
+      <div class="counter" id="counter"></div>
+
+      <div class="section-title">Regular Students</div>
+
+      <table id="regularTable">
+        <thead>
+          <tr>
+            <th>Serial</th>
+            <th>ID</th>
+            <th>Name</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td></td>
+            <td>261-115-101</td>
+            <td>Mariya Akther</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>261-115-102</td>
+            <td>Md Nasirul Islam Chowdhury</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>261-115-103</td>
+            <td>Mustafizur Rahman Adil</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>261-115-104</td>
+            <td>Rihma Ahmed</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>261-115-105</td>
+            <td>Suraiya Akhter</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>261-115-106</td>
+            <td>Mahfuza Ahmed Lima</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>261-115-107</td>
+            <td>Anika Hussain</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>261-115-108</td>
+            <td>Mehruba Rahman Meem</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>261-115-109</td>
+            <td>Blank</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>261-115-110</td>
+            <td>Kazi Tawhidur Rahman</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>261-115-111</td>
+            <td>Muhammad Sabbir Ahmed Kamaly</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>261-115-112</td>
+            <td>Dewan Tasawar Mazid</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>261-115-113</td>
+            <td>Saliha Bhuiyan Rupa</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>261-115-114</td>
+            <td>Blison Pohsyad</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>261-115-115</td>
+            <td>Niloy Patro</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>261-115-116</td>
+            <td>Tuli Datta</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>261-115-117</td>
+            <td>Samia Mahbub (CR)</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>261-115-118</td>
+            <td>Mouli Roy</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>261-115-119</td>
+            <td>Shah Nusrat Jahan</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>261-115-120</td>
+            <td>Suprova Hossain Obonti</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>261-115-121</td>
+            <td>Blank</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>261-115-122</td>
+            <td>Jannatul Mawa</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>261-115-123</td>
+            <td>Namrota Sarty</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>261-115-124</td>
+            <td>Khadiza Akther Tarin</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>261-115-125</td>
+            <td>Tasnim Ahmed Maliha</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>261-115-126</td>
+            <td>MST Samira Jannat Lavoni</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>261-115-127</td>
+            <td>Blank</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>261-115-128</td>
+            <td>Sanjida Jannat</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>261-115-129</td>
+            <td>Shanjida Fateha Lima</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>261-115-130</td>
+            <td>Sajeda Nur Chowdhury</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>261-115-131</td>
+            <td>Fayja Islam Chowdhury</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>261-115-132</td>
+            <td>Fahi Muhtadee</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>261-115-133</td>
+            <td>Nafisha Akter Trisha</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>261-115-134</td>
+            <td>Nowshin Nawal Khan</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>261-115-135</td>
+            <td>Tamzidur Rahman</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>261-115-136</td>
+            <td>Yousuf Ahmed Sunny</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>261-115-137</td>
+            <td>Sunjida Akter</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>261-115-138</td>
+            <td>Tajbid Ahmed Chowdhury</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>261-115-139</td>
+            <td>Sadia Akther</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>261-115-140</td>
+            <td>Maisha Tasnim Chowdhury</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>261-115-141</td>
+            <td>Amirul Islam</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>261-115-142</td>
+            <td>Arjumand Ara Liza</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>261-115-143</td>
+            <td>Blank</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>261-115-144</td>
+            <td>Zarin Mashud Sabah</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>261-115-145</td>
+            <td>Sagufta Nasrin Luthfa</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>261-115-146</td>
+            <td>Afrida Anjum</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>261-115-147</td>
+            <td>Md. Ariful Haque</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>261-115-148</td>
+            <td>Puspita Sinha</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>261-115-149</td>
+            <td>Farhana Noor Shumi</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>261-115-150</td>
+            <td>Sanjida Tasnim Lisa</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="section-title">Re-Admission Students</div>
+
+      <table id="reTable">
+        <thead>
+          <tr>
+            <th>Serial</th>
+            <th>ID</th>
+            <th>Name</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td></td>
+            <td>253-115-103</td>
+            <td>PORAG CHOWDHURY</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>251-115-183</td>
+            <td>JANNATULL NAYEEM NUR <span class="badge">CR</span></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>252-115-120</td>
+            <td>ABDULLAH AL MAHI M CHOWDHURY</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>252-115-116</td>
+            <td>MD ABDUL AHAD SAIEDY</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>231-115-324</td>
+            <td>MD AL WALID SAMAUN</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>253-115-117</td>
+            <td>Shrestrojit Barman Angkur</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>252-115-176</td>
+            <td>Samiha Mahjabin Jarin</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>222-115-017</td>
+            <td>Razia Sultana Shammi (Mukti)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <script>
+      function addSerial(tableID) {
+        let table = document.getElementById(tableID);
+        for (let i = 1; i < table.rows.length; i++) {
+          table.rows[i].cells[0].innerHTML = i;
+        }
+      }
+
+      addSerial("regularTable");
+      addSerial("reTable");
+
+      let total =
+        document.getElementById("regularTable").rows.length -
+        1 +
+        (document.getElementById("reTable").rows.length - 1);
+
+      document.getElementById("counter").innerText = "Total Students: " + total;
+
+      function searchTable() {
+        let input = document.getElementById("searchInput").value.toUpperCase();
+        document.querySelectorAll("tbody tr").forEach((row) => {
+          row.style.display = row.innerText.toUpperCase().includes(input)
+            ? ""
+            : "none";
+        });
+      }
+
+      function toggleDark() {
+        document.body.classList.toggle("dark");
+      }
+
+      function downloadCSV() {
+        let rows = document.querySelectorAll("table tr");
+        let csv = [];
+
+        rows.forEach((row) => {
+          let cols = row.querySelectorAll("td, th");
+          let data = [];
+          cols.forEach((col) => data.push(col.innerText));
+          csv.push(data.join(","));
+        });
+
+        let blob = new Blob([csv.join("\n")], { type: "text/csv" });
+        let url = window.URL.createObjectURL(blob);
+
+        let a = document.createElement("a");
+        a.href = url;
+        a.download = "student_list.csv";
+        a.click();
+      }
+    </script>
+  </body>
+</html>
